@@ -1,6 +1,7 @@
 package com.hayvanTakip.hayvanTakip.repositories;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public class RoleRepository {
-    
-}
+import com.hayvanTakip.hayvanTakip.models.Role;
+
+public interface RoleRepository extends JpaRepository<Role, Integer> {}
