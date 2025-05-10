@@ -9,3 +9,4 @@ public interface UretimStrategy {
     void kaydet(UretimRequest request);
     List<UretimResponse> listele();
 }
+
