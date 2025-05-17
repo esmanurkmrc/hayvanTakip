@@ -5,11 +5,13 @@ public class RegisterRequest {
     private String email;
     private String password;
     private String name;
+    private Integer roleId;
 
-    public RegisterRequest(String email, String password, String name) {
+    public RegisterRequest(String email, String password, String name, Integer roleId) {
         this.email = email;
         this.password = password;
         this.name = name;
+        this.roleId = roleId;
     }
 
     public String getEmail() {
@@ -35,6 +37,12 @@ public class RegisterRequest {
     public void setPassword(String password) {
         this.password = password;
     }
-}
-    
 
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+}

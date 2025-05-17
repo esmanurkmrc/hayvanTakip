@@ -1,25 +1,24 @@
 package com.hayvanTakip.hayvanTakip.dtos.response;
 
 public class LoginResponse {
-    private Integer id;
+    private Integer userId;
     private String email;
+    private String roleName;
 
-    private String role;
-
-    public LoginResponse(Integer id, String email, String role) {
-        this.id = id;
+    public LoginResponse(Integer userId, String email, String roleName) {
+        this.userId = userId;
         this.email = email;
-        this.role = role;
+        this.roleName = roleName;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
-    
+
     public String getEmail() {
         return email;
     }
@@ -28,12 +27,11 @@ public class LoginResponse {
         this.email = email;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
-    
 }

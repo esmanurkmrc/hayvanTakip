@@ -1,9 +1,10 @@
 package com.hayvanTakip.hayvanTakip.service;
 
+import java.util.List;
+
 import com.hayvanTakip.hayvanTakip.dtos.request.VeterinerRequest;
 import com.hayvanTakip.hayvanTakip.dtos.response.VeterinerResponse;
-
-import java.util.List;
+import com.hayvanTakip.hayvanTakip.models.Veteriner;
 
 public interface VeterinerService {
     VeterinerResponse create(VeterinerRequest request);
@@ -11,4 +12,6 @@ public interface VeterinerService {
     void delete(Long id);
     List<VeterinerResponse> getAll();
     VeterinerResponse getById(Long id);
+
+    VeterinerResponse convertToResponse(Veteriner v);
 }

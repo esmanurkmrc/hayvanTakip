@@ -9,6 +9,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -24,12 +25,9 @@ public class User {
     @JoinColumn(name = "role_id")
     private Role role;
 
-    public User() {
+    public User() {}
 
-    }
-
-    public User(String name, String lastName, String password,String email, String phone,
-    String address){
+    public User(String name, String lastName, String password, String email, String phone, String address) {
         this.name = name;
         this.lastName = lastName;
         this.password = password;
@@ -37,6 +35,8 @@ public class User {
         this.phone = phone;
         this.address = address;
     }
+
+    
 
     public Integer getId() {
         return id;
@@ -78,20 +78,20 @@ public class User {
         this.email = email;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public Role getRole() {
@@ -101,6 +101,4 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
-
-
 }

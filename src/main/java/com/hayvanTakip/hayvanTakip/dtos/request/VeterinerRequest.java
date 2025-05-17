@@ -9,6 +9,7 @@ public class VeterinerRequest {
     private String adres;
     private String uzmanlikAlani;
     private Boolean aktif;
+    private String sifre; 
 
     public String getAd() {
         return ad;
@@ -64,5 +65,13 @@ public class VeterinerRequest {
 
     public void setAktif(Boolean aktif) {
         this.aktif = aktif;
+    }
+
+    public String getSifre() {
+        return sifre;
+    }
+
+    public void setSifre(String sifre) {
+        this.sifre = sifre;
     }
 }
