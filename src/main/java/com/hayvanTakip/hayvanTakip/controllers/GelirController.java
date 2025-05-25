@@ -35,4 +35,10 @@ public class GelirController {
     public void delete(@PathVariable Long id) {
         gelirService.delete(id);
     }
+    @PutMapping("/{id}")
+public Gelir update(@PathVariable Long id, @RequestBody Gelir gelir) {
+    gelir.setId(id);
+    return gelirService.save(gelir); 
+}
+
 }

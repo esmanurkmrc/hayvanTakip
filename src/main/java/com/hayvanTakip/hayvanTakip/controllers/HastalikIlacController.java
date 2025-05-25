@@ -13,8 +13,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class HastalikIlacController {
 
-    @Autowired
-    private HastalikIlacService service;
+    private final HastalikIlacService service;
+
+    public HastalikIlacController(HastalikIlacService service) {
+        this.service = service;
+    }
 
     @PostMapping
     public HastalikIlacResponse create(@RequestBody HastalikIlacRequest request) {
@@ -39,5 +42,10 @@ public class HastalikIlacController {
     @GetMapping("/{id}")
     public HastalikIlacResponse getById(@PathVariable Long id) {
         return service.getById(id);
+    }
+
+    @GetMapping("/hastalik/{hastalikId}")
+    public List<HastalikIlacResponse> getByHastalikId(@PathVariable Long hastalikId) {
+        return service.getByHastalikId(hastalikId);
     }
 }

@@ -90,6 +90,14 @@ public class HastalikIlacServiceImpl implements HastalikIlacService {
                 .orElseThrow(() -> new RuntimeException("Kayıt bulunamadı"));
     }
 
+    @Override
+    public List<HastalikIlacResponse> getByHastalikId(Long hastalikId) {
+        return repository.findByHastalikId(hastalikId)
+                .stream()
+                .map(this::mapToResponse)
+                .collect(Collectors.toList());
+    }
+
     private HastalikIlacResponse mapToResponse(HastalikIlac entity) {
         HastalikIlacResponse response = new HastalikIlacResponse();
         response.setId(entity.getId());

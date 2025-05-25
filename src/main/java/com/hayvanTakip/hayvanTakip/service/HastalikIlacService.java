@@ -11,4 +11,6 @@ public interface HastalikIlacService {
     void delete(Long id);
     List<HastalikIlacResponse> getAll();
     HastalikIlacResponse getById(Long id);
+    List<HastalikIlacResponse> getByHastalikId(Long hastalikId);
+
 }
