@@ -1,7 +1,13 @@
 package com.hayvanTakip.hayvanTakip.models;
 
-import jakarta.persistence.*;
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Gelir {
@@ -9,8 +15,10 @@ public class Gelir {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String kaynak; 
+    private String kaynak;
     private double tutar;
+
+    @JsonFormat(pattern = "yyyy-MM-dd") 
     private LocalDate tarih;
 
     public Long getId() { return id; }
@@ -23,6 +31,5 @@ public class Gelir {
     public void setTutar(double tutar) { this.tutar = tutar; }
 
     public LocalDate getTarih() { return tarih; }
-    public void setTarih(LocalDate tarih) { this.tarih = tarih; 
-    }
+    public void setTarih(LocalDate tarih) { this.tarih = tarih; }
 }

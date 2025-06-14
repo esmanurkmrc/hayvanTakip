@@ -1,11 +1,21 @@
 package com.hayvanTakip.hayvanTakip.controllers;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hayvanTakip.hayvanTakip.dtos.response.AsiTakvimiResponse;
 import com.hayvanTakip.hayvanTakip.models.AsiTakvimi;
 import com.hayvanTakip.hayvanTakip.service.AsiTakvimiService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/asitakvimi")
@@ -31,8 +41,8 @@ public class AsiTakvimiController {
     }
 
     @GetMapping
-    public List<AsiTakvimi> getAll() {
-        return service.getAll();
+    public List<AsiTakvimiResponse> getAll() {
+        return service.getAllAsiTakvimi(); 
     }
 
     @GetMapping("/{id}")
